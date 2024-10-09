@@ -7,12 +7,10 @@
 </p>
 
 <h3 align="center"><a href="https://arxiv.org/pdf/2207.02013">Arxiv</a> | <a href="">Video (Coming soon)</a></h3>
-<div align="center"></div>
+
 <p align="center">
-  <a href="https://github.com/Jiahao-Ma/MvCHM/demo/vidWildtrack_pc_result.avi">
-    <a href="">
-    <img src="./demo/vidWildtrack_pc_result.gif" alt="teaser" width="100%">
-  </a>
+  <a href="https://github.com/Jiahao-Ma/MvCHM/blob/main/demo/Wildtrack_pc_result.avi">
+    <img src="https://raw.githubusercontent.com/Jiahao-Ma/MvCHM/main/demo/Wildtrack_pc_result.gif" alt="teaser" width="75%">
   </a>
 </p>
 
