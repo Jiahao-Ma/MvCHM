@@ -1,3 +1,21 @@
+<p align="center">
+
+  <h1 align="center"> Multiview Detection with Cardboard Human Modeling </h1>
+  
+  <h3 align="center"> ACCV2024 </h3>
+
+</p>
+
+<h3 align="center"><a href="https://arxiv.org/pdf/2207.02013">Arxiv</a> | <a href="">Video (Coming soon)</a></h3>
+<div align="center"></div>
+<p align="center">
+  <a href="https://github.com/Jiahao-Ma/MvCHM/demo/vidWildtrack_pc_result.avi">
+    <a href="">
+    <img src="./demo/vidWildtrack_pc_result.gif" alt="teaser" width="100%">
+  </a>
+  </a>
+</p>
+
 # Multiview Detection with Cardboard Human Modeling
  The official implementation of Multiview Detection with Cardboard Human Modeling. The paper has been accepted by ACCV 2024.
 
@@ -30,5 +48,5 @@ pip install easydict torch==1.12.1+cu113 torchvision==0.13.1+cu113 tqdm scipy op
 3. Clone this repository
 ```
 cd Your-Project-Folder
-gir clone git@github.com:ZichengDuan/MvCHM.git
+gir clone git@github.com:Jiahao-Ma/MvCHM.git
 ```
