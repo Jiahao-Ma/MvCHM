@@ -6,31 +6,22 @@
 
 </p>
 
-<h3 align="center"><a href="https://arxiv.org/pdf/2207.02013">Arxiv</a> | <a href="">Video (Coming soon)</a></h3>
+<h3 align="center"><a href="https://arxiv.org/pdf/2207.02013">Paper</a> | <a href="">Video (Coming soon)</a></h3>
 
 <p align="center">
-<<<<<<< HEAD
   <a href="https://github.com/Jiahao-Ma/MvCHM/blob/main/demo/Wildtrack_pc_result.avi">
     <img src="https://raw.githubusercontent.com/Jiahao-Ma/MvCHM/main/demo/Wildtrack_pc_result.gif" alt="teaser" width="75%">
-=======
-  <a href="[https://github.com/Jiahao-Ma/MvCHM/demo/vidWildtrack_pc_result.avi](https://github.com/Jiahao-Ma/MvCHM/blob/main/demo/Wildtrack_pc_result.avi)">
-    <a href="">
-    <img src="[./demo/vidWildtrack_pc_result.gif](https://github.com/Jiahao-Ma/MvCHM/blob/main/demo/Wildtrack_pc_result.gif)" alt="teaser" width="100%">
-  </a>
->>>>>>> 4fcccf7e4b90e7f18350bb2be70c4b9c50e90449
   </a>
 </p>
 
-# Multiview Detection with Cardboard Human Modeling
- The official implementation of Multiview Detection with Cardboard Human Modeling. The paper has been accepted by ACCV 2024.
+<p align="left">
+The project provides official implementation of <a href="https://arxiv.org/pdf/2207.02013">MvCHM</a> in ACCV'24. The paper introduces a multiview pedestrian detection method using "cardboard human modeling," which aggregates 3D point clouds from multiple camera views. This approach improves accuracy by considering human appearance and height, reducing projection errors compared to traditional 2D methods. 
+</p>
 
-Code and data for paper:  
-**Multiview Detection with Cardboard Human Modeling**  
-[Jiahao Ma*](https://github.com/Jiahao-Ma), [Zicheng Duan*](https://github.com/ZichengDuan), [Liang Zheng](https://zheng-lab.cecs.anu.edu.au/), [Chuong Nguyen](https://people.csiro.au/N/C/Chuong-Nguyen)  
-[[Paper and Appendices](https://arxiv.org/pdf/2207.02013)]
-
-## Overview
-We propose a new state-of-the-art method MvCHM for multiview object detection, and some major upgrades on existing multiview pedestrian detectiom benchmarks [Wildtrack](https://www.epfl.ch/labs/cvlab/data/data-wildtrack/) dataset and [MultiviewX](https://github.com/hou-yz/MultiviewX) dataset, respectively named as Wildtrack+ and MultiviewX+.
+## TODOs
+- [x] Inference and Training Codes
+- [ ] Pretrained Models
+- [ ] Supplementary dataset Wildtrack+ and MultiviewX+
 
 ## Prerequisites
 This project is tested to run on environment with:  
