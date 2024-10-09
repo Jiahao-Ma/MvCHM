@@ -11,7 +11,7 @@
 <p align="center">
   <a href="[https://github.com/Jiahao-Ma/MvCHM/demo/vidWildtrack_pc_result.avi](https://github.com/Jiahao-Ma/MvCHM/blob/main/demo/Wildtrack_pc_result.avi)">
     <a href="">
-    <img src="./demo/vidWildtrack_pc_result.gif" alt="teaser" width="100%">
+    <img src="[./demo/vidWildtrack_pc_result.gif](https://github.com/Jiahao-Ma/MvCHM/blob/main/demo/Wildtrack_pc_result.gif)" alt="teaser" width="100%">
   </a>
   </a>
 </p>
