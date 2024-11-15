@@ -24,7 +24,11 @@ def parse_config():
     parser.add_argument('--cfg_file', type=str, default=r'cfgs\MvDDE.yaml',\
          help='specify the config for training')
     parser.add_argument('--workers', type=int, default=1, help='number of workers for dataloader')  
+    
+    parser.add_argument('--dataname', type=str, default='Wildtrack', help='the name of dataset')
 
+    parser.add_argument('--data_root', type=str, default=None, help='the path of dataset. eg: /path/to/Wildtrack')
+    
     args = parser.parse_args()
     cfg_from_yaml_file(args.cfg_file, cfg)
     return args, cfg
@@ -107,8 +111,12 @@ def main(thresh=0.7, save_idx=None):
 
     process = Process(scale_h, scale_w, pad_h, pad_w, new_h, new_w, old_h, old_w)
 
-    dataname = 'Wildtrack'
-    path = 'F:\ANU\ENGN8602\Data\{}'.format(dataname) # MultiviewX
+    # dataname = 'Wildtrack'
+    # path = 'F:\ANU\ENGN8602\Data\{}'.format(dataname) # MultiviewX
+    assert args.data_root is not None, 'Please specify the path of dataset'
+    assert args.dataname in ['MultiviewX', 'Wildtrack'], 'Please specify the name of dataset'
+    dataname = args.dataname
+    path = args.data_root
     DATASET = {'MultiviewX': MultiviewX, 'Wildtrack': Wildtrack}
     t0 = time.time()
     val_dataset = MultiviewDataset( DATASET[dataname](root=path), set_name='val')

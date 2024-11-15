@@ -184,8 +184,13 @@ def resume(resume_dir, model, optimizer, scheduler, load_model_ckpt_only=False):
 
 def parse_config():
     parser = argparse.ArgumentParser(description='arg parser')
-    parser.add_argument('--cfg_file', type=str, default=r'F:\ANU\ENGN8602\Code\MvDDE\MvCHM\cfgs\MvDDE.yaml',\
+    parser.add_argument('--cfg_file', type=str, default=r'cfgs\MvDDE.yaml',\
          help='specify the config for training')
+    
+    parser.add_argument('--dataname', type=str, default='Wildtrack', help='the name of dataset')
+
+    parser.add_argument('--data_root', type=str, default=None, help='the path of dataset. eg: /path/to/Wildtrack')
+    
     parser.add_argument('--workers', type=int, default=1, help='number of workers for dataloader')         
     
      # Training options
@@ -255,8 +260,11 @@ def main():
     # mean = torch.tensor(np.array([0.485, 0.456, 0.406]), dtype=torch.float32)
     # std = torch.tensor(np.array([0.229, 0.224, 0.225]), dtype=torch.float32)
 
-    dataname = 'Wildtrack'
-    path = 'F:\ANU\ENGN8602\Data\{}'.format(dataname) # MultiviewX
+    assert args.data_root is not None, 'Please specify the path of dataset'
+    assert args.dataname in ['MultiviewX', 'Wildtrack'], 'Please specify the name of dataset'
+    dataname = args.dataname
+    # path = 'F:\ANU\ENGN8602\Data\{}'.format(dataname) # MultiviewX
+    path = args.data_root
     DATASET = {'MultiviewX': MultiviewX, 'Wildtrack': Wildtrack}
     if dataname == 'MultiviewX':
         detector_ckpt = r'model\detector\checkpoint\rcnn_mxp.pth'

@@ -89,7 +89,11 @@ def parse_config():
     parser.add_argument('--cfg_file', type=str, default=r'cfgs\MvDDE.yaml',\
          help='specify the config for training')
     parser.add_argument('--workers', type=int, default=1, help='number of workers for dataloader')  
+    parser.add_argument('--cfg_file', type=str, default=None, help='the path to trained model checkpoint')  
+    parser.add_argument('--dataname', type=str, default='Wildtrack', help='the name of dataset')
 
+    parser.add_argument('--data_root', type=str, default=None, help='the path of dataset. eg: /path/to/Wildtrack')
+    
     args = parser.parse_args()
     cfg_from_yaml_file(args.cfg_file, cfg)
     return args, cfg
@@ -99,8 +103,8 @@ def main(thresh=0.5):
     args, cfg = parse_config()
     setup_seed(0)
     # define preprocess operation and dataloader
-    
-    cfg_file = r'F:\ANU\ENGN8602\Code\MvDDE\MvCHM\experiments\2022-10-23_19-53-52_wt\MvDDE.yaml'
+    cfg_file = args.cfg_file
+    # cfg_file = r'F:\ANU\ENGN8602\Code\MvDDE\MvCHM\experiments\2022-10-23_19-53-52_wt\MvDDE.yaml'
     cfg_from_yaml_file(cfg_file, cfg)
 
     new_w, new_h, old_w, old_h = cfg.DATA_CONFIG.NEW_WIDTH, cfg.DATA_CONFIG.NEW_HEIGHT, cfg.DATA_CONFIG.OLD_WIDTH, cfg.DATA_CONFIG.OLD_HEIGHT
@@ -109,8 +113,12 @@ def main(thresh=0.5):
 
     process = Process(scale_h, scale_w, pad_h, pad_w, new_h, new_w, old_h, old_w)
 
-    dataname = 'Wildtrack'
-    path = 'F:\ANU\ENGN8602\Data\{}'.format(dataname) # MultiviewX
+    assert args.data_root is not None, 'Please specify the path of dataset'
+    assert args.dataname in ['MultiviewX', 'Wildtrack'], 'Please specify the name of dataset'
+    dataname = args.dataname
+    path = args.data_root
+    # dataname = 'Wildtrack'
+    # path = 'F:\ANU\ENGN8602\Data\{}'.format(dataname) # MultiviewX
     DATASET = {'MultiviewX': MultiviewX, 'Wildtrack': Wildtrack}
 
     val_dataset = MultiviewDataset( DATASET[dataname](root=path), set_name='val')
